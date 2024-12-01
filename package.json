@@ -30,10 +30,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/index.js",
+    "start:frontend": "react-scripts start",
+    "start:both": "concurrently \"npm run start\" \"npm run start:frontend\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "npm run build && node server/index.js"
   },
   "eslintConfig": {
     "extends": [
