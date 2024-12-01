@@ -138,13 +138,10 @@ app.post("/api/saveGraph", async (req, res) => {
 
 // Get the saved graph for a user
 app.get("/api/getGraph/:userId", async (req, res) => {
-  console.log("inside");
   const { userId } = req.params;
 
-  console.log("ID -- ", userId);
   try {
     const graph = await Graph.findOne({ userId });
-    console.log("GRAPH -- ", graph);
     if (!graph) {
       console.log(`No graph found for userId: ${userId}`);
       return res.status(404).json({ message: "No graph found for this user." });
@@ -166,8 +163,10 @@ const start = async () => {
     console.error(err);
   }
 
-  app.listen(5000, () => {
-    console.log("Listening on port 5000 !");
+  const port = process.env.PORT || 4000;
+
+  app.listen(port, () => {
+    console.log("Listening on port 4000 !");
   });
 };
 
