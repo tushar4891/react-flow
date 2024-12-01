@@ -243,7 +243,7 @@ function ReactRendererFlow() {
     setNodes((prev) => [...prev, newNode]);
     setEdges((prev) => [...prev, newEdge]);
     // Update position of node with id "1"
-    updateNodePosition("1", 150, 0); // Move right by 50px
+    updateNodePosition("1", 300, 0); // Move right by 50px
   };
 
   const waitNode = (text) => {
