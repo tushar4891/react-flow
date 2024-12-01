@@ -1,0 +1,10 @@
+.hover-square {
+  cursor: pointer;
+}
+
+.hover-square:hover {
+  border-color: #ff4081;
+  background-color: #e3e3e3;
+  box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+  transform: scale(1.1);
+}
