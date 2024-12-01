@@ -154,6 +154,7 @@ app.get("/api/getGraph/:userId", async (req, res) => {
   }
 });
 
+const port = process.env.PORT || 4000;
 const start = async () => {
   try {
     const mongoUri = process.env.MONGO_URI;
@@ -163,10 +164,8 @@ const start = async () => {
     console.error(err);
   }
 
-  const port = process.env.PORT || 4000;
-
   app.listen(port, () => {
-    console.log("Listening on port 4000 !");
+    console.log(`Listening on port ${port} !`);
   });
 };
 
